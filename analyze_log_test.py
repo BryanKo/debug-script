@@ -48,12 +48,12 @@ searchName = sys.argv[4]
 if userFiles != "--file":
     print("not --file")
 if userSearch != "--pattern":
-    print("not --file")
+    print("not --pattern")
 
 #read files in current dir starting with debug and ending with .log
 debugFiles = glob.glob(fileName+'.log')
 
-output = open('output.txt', 'w')
+output = open('output_test_' + searchName + '.txt', 'w')
 #for loop to cycle through all the files sorted by the glob.glob
 for file_name in debugFiles:
     #check what files are read
@@ -62,14 +62,14 @@ for file_name in debugFiles:
         searchlines = f.readlines()
         for i, line in enumerate(searchlines):
             #output lines starting with 'request' and contains user input and 'severity': 'error'
-            if line.startswith('request') and searchName in line and "'severity': 'error'" in line:
+            if line.startswith('request') and searchName in line:
                 output.write(line)
             #output lines starting with 'response' and contains user input and 'severity': 'error'   
             if line.startswith('response'):
                 for lines in searchlines[i:i+3]:
                     #check if the output is correct
                     #output.write(lines)
-                    if searchName in lines and "'severity': 'error'" in line:
+                    if searchName in lines:
                         for j in range(3):
                             output.write(searchlines[i+j])
             #output lines starting with 'Traceback' and contains user input and
