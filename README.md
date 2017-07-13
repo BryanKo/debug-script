@@ -4,6 +4,8 @@ Python script that will read debug*.log files
 To run the script, type:
 
 	- python3 analyze_log.py --file ./debug\* --pattern (pattern)
+    - python3 analyze_log_test.py --file ./debug\* --pattern (pattern)
+
 The two patterns tested for this coding challenge are:
 
 	- vol-test-111
@@ -23,12 +25,12 @@ Problems:
         - if searchName is found, print from Traceback line to timestamp line to output file
         - to print print this, use the i-(lineNum+2) to get total lines needed
         - use for loop with range of total lines needed to print to output file
-    3. In calling the script, "python3 analyze_log.py --file ./debug* --pattern vol-test-111", the script will "not --file"
+    3. In calling the script, "python3 analyze_log.py --file ./debug* --pattern vol-test-111", the script will "not --pattern"
         - to make this work use "python3 analyze_log.py --file ./debug\* --pattern vol-test-111"
 
         
 Confusion with coding:
 
     1. There was no "'severity': 'error'" in the debug*.log files so I guess how to implement them into the script
-    	- output.txt will display searched lines if **"'severity': 'error' in line** are removed where seen in code
+    	- output.txt will display searched lines if " "'severity': 'error'" in line " are removed where seen in code
     2. For the Traceback condition, I'm not entirely sure where to stop seaching the searchName
