@@ -1,9 +1,9 @@
-# Nimble Storage Coding Challenge
+# Debug Script
 Python script that will read debug*.log files
 
 To run the script, type:
 
-	- python3 analyze_log.py --file ./debug\* --pattern (pattern)
+    - python3 analyze_log.py --file ./debug\* --pattern (pattern)
     - python3 analyze_log_test.py --file ./debug\* --pattern (pattern)
 
 The two patterns tested for this coding challenge are:
